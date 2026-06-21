@@ -1,0 +1,20 @@
+# Rust
+target/
+**/*.rs.bk
+*.pdb
+
+# Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Machine-specific
+.npmrc
+.cargo/
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store

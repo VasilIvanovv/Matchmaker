@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Matchmaker",
+  "version": "0.1.0",
+  "identifier": "com.matchmaker.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": []
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Matchmaker",
+        "width": 1100,
+        "height": 750,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}
