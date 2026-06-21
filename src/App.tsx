@@ -43,11 +43,10 @@ function App() {
     if (!canBalance) return
     setLoading(true)
     try {
-      const payload = allPlayers.map((p, i) => ({
-        id: p.id,
-        name: p.name.trim() || `Player ${i + 1}`,
-        elo: p.elo,
-      }))
+      const payload = [
+        ...teamA.map((p, i) => ({ id: p.id, name: p.name.trim() || `Player ${i + 1}`, elo: p.elo })),
+        ...teamB.map((p, i) => ({ id: p.id, name: p.name.trim() || `Player ${i + 1}`, elo: p.elo })),
+      ]
       const res = await invoke<BalanceResult>('balance', { players: payload })
 
       // Re-attach original names (Rust returns the same players back)
